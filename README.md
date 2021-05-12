@@ -1,4 +1,4 @@
-# Little-Timmy-s-Escape
+# Little-Timmys-Escape
 Help Timmy get to the door!
 Created with Python for Kids by Jason Briggs.
 
