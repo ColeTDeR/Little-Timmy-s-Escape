@@ -1,5 +1,5 @@
-from tkinter import Canvas, PhotoImage, Tk
 import time
+from tkinter import Canvas, PhotoImage, Tk
 
 
 class Coords:
