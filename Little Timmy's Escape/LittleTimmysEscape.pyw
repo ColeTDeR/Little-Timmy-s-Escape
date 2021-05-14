@@ -1,3 +1,4 @@
+import os
 import time
 from tkinter import Canvas, PhotoImage, Tk
 
@@ -71,9 +72,11 @@ class Game:
         self.tk.update()
         self.canvas_height = 500
         self.canvas_width = 500
-        self.bg = PhotoImage(file='background.gif')
-        self.bg_bird1 = PhotoImage(file='backgroundbird1.gif')
-        self.bg_bird2 = PhotoImage(file='backgroundbird2.gif')
+        self.bg = PhotoImage(file=(os.path.join('Assets', 'background.gif')))
+        self.bg_bird1 = PhotoImage(
+            file=(os.path.join('Assets', 'backgroundbird1.gif')))
+        self.bg_bird2 = PhotoImage(
+            file=(os.path.join('Assets', 'backgroundbird2.gif')))
         w = self.bg.width()
         h = self.bg.height()
         count = 0
@@ -162,14 +165,14 @@ class StickFigureSprite(Sprite):
     def __init__(self, game):
         Sprite.__init__(self, game)
         self.images_left = [
-            PhotoImage(file='figure-L1.gif'),
-            PhotoImage(file='figure-L2.gif'),
-            PhotoImage(file='figure-L3.gif'),
+            PhotoImage(file=(os.path.join('Assets', 'figure-L1.gif'))),
+            PhotoImage(file=(os.path.join('Assets', 'figure-L2.gif'))),
+            PhotoImage(file=(os.path.join('Assets', 'figure-L3.gif'))),
         ]
         self.images_right = [
-            PhotoImage(file='figure-R1.gif'),
-            PhotoImage(file='figure-R2.gif'),
-            PhotoImage(file='figure-R3.gif')
+            PhotoImage(file=(os.path.join('Assets', 'figure-R1.gif'))),
+            PhotoImage(file=(os.path.join('Assets', 'figure-R2.gif'))),
+            PhotoImage(file=(os.path.join('Assets', 'figure-R3.gif')))
         ]
         self.image = game.canvas.create_image(200, 470,
                                               image=self.images_left[0],
@@ -311,8 +314,9 @@ class StickFigureSprite(Sprite):
 class DoorSprite(Sprite):
     def __init__(self, game, x, y, width, height):
         Sprite.__init__(self, game)
-        self.closed_door = PhotoImage(file="door1.gif")
-        self.open_door = PhotoImage(file="door2.gif")
+        self.closed_door = PhotoImage(
+            file=(os.path.join('Assets', "door1.gif")))
+        self.open_door = PhotoImage(file=(os.path.join('Assets', "door2.gif")))
         self.image = game.canvas.create_image(x, y, image=self.closed_door,
                                               anchor='nw')
         self.coordinates = Coords(x, y, x + (width / 2), y + height)
@@ -329,25 +333,25 @@ class DoorSprite(Sprite):
 
 g = Game()
 
-platform1 = PlatformSprite(g, PhotoImage(file='platform1.gif'),
+platform1 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform1.gif'))),
                            0, 480, 100, 10)
-platform2 = PlatformSprite(g, PhotoImage(file='platform1.gif'),
+platform2 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform1.gif'))),
                            150, 440, 100, 10)
-platform3 = PlatformSprite(g, PhotoImage(file='platform1.gif'),
+platform3 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform1.gif'))),
                            300, 400, 100, 10)
-platform4 = PlatformSprite(g, PhotoImage(file='platform1.gif'),
+platform4 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform1.gif'))),
                            300, 160, 100, 10)
-platform5 = MovingPlatformSprite(g, PhotoImage(file='platform2.gif'),
+platform5 = MovingPlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform2.gif'))),
                                  175, 350, 66, 10)
-platform6 = PlatformSprite(g, PhotoImage(file='platform2.gif'),
+platform6 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform2.gif'))),
                            50, 300, 66, 10)
-platform7 = PlatformSprite(g, PhotoImage(file='platform2.gif'),
+platform7 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform2.gif'))),
                            170, 120, 66, 10)
-platform8 = PlatformSprite(g, PhotoImage(file='platform2.gif'),
+platform8 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform2.gif'))),
                            45, 60, 66, 10)
-platform9 = MovingPlatformSprite(g, PhotoImage(file='platform3.gif'),
+platform9 = MovingPlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform3.gif'))),
                                  170, 250, 32, 10)
-platform10 = PlatformSprite(g, PhotoImage(file='platform3.gif'),
+platform10 = PlatformSprite(g, PhotoImage(file=(os.path.join('Assets', 'platform3.gif'))),
                             230, 200, 32, 10)
 door = DoorSprite(g, 45, 30, 40, 35)
 sf = StickFigureSprite(g)
