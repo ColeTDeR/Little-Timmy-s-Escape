@@ -2,7 +2,7 @@
 Help Timmy get to the door!
 Created with Python for Kids by Jason Briggs.
 
-REQUIREMENTS:
+Requirements:
 Python 3. You can download it here: https://www.python.org/downloads/
 
 To Play:
